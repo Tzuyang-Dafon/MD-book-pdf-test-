@@ -1,6 +1,11 @@
 [book]
-authors = ["大豐環保科技股份有限公司"]
+authors = ["Tzuyang"]
 language = "zh-Hant"
 multilingual = false
 src = "."
+
 title = "Lorem ipsum dolor"
+ 
+[output.html]
+
+[output.pdf]
