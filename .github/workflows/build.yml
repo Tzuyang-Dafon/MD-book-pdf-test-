@@ -23,7 +23,7 @@ jobs:
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
-
+      - run: cargo install --git https://github.com/HollowMan6/mdbook-pdf.git
       - run: mdbook build
       
       - name: deploy
@@ -33,5 +33,6 @@ jobs:
           path: book
           retention-days: 1
           
+
 
 
