@@ -26,13 +26,23 @@ jobs:
       - run: cargo install --git https://github.com/HollowMan6/mdbook-pdf.git
       - run: mdbook build
       
-      - name: deploy
+      - name: deploy book
         uses: actions/upload-artifact@v4
         with: 
-          name: "{{ Lorem ipsum dolor }}文件.zip"
-          path: book
+          name: "{{ Lorem ipsum dolor }}文件 (HTML format).zip"
+          path: |
+            book
+            !book/pdf
           retention-days: 1
           
+      - name: deploy pdf
+        uses: actions/upload-artifact@v4
+        with: 
+          name: "{{ Lorem ipsum dolor }}文件 (pdf format).zip"
+          path: book/pdf/*.pdf
+          retention-days: 1
+          
+
 
 
 
