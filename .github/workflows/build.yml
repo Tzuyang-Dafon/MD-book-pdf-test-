@@ -23,7 +23,10 @@ jobs:
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
+
       - run: cargo install --git https://github.com/HollowMan6/mdbook-pdf.git
+      - run: cargo install mdbook-epub
+
       - run: mdbook build
       
       - name: deploy book
@@ -39,6 +42,13 @@ jobs:
         with: 
           name: "{{ Lorem ipsum dolor }}文件 (pdf format)"
           path: book/pdf/*.pdf
+          retention-days: 1
+          
+      - name: deploy ePub
+        uses: actions/upload-artifact@v4
+        with: 
+          name: "{{ Lorem ipsum dolor }}文件 (ePub format)"
+          path: book/epub
           retention-days: 1
           
 
