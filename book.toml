@@ -6,7 +6,3 @@ src = "."
 title = "Lorem ipsum dolor"
  
 [output.html]
-
-[output.pdf]
-
-[output.epub]
