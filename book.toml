@@ -1,7 +1,6 @@
 [book]
 authors = ["Tzuyang"]
-language = "zh-Hant"
-multilingual = false
+language = "zh-Hant" 
 src = "."
 
 title = "Lorem ipsum dolor"
@@ -9,3 +8,4 @@ title = "Lorem ipsum dolor"
 [output.html]
 
 [output.pdf]
+
