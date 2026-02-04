@@ -44,11 +44,11 @@ jobs:
       - name: update book.toml
         if: inputs.buildEPUB || inputs.buildPDF
         run: |
-          if [ "${{ inputs.buildPDF }}" = "true" ]; then
+          if [ "${{ inputs.buildPDF }}" == "true" ]; then
             echo "" >> src/book.toml
             echo "[output.pdf]" >> src/book.toml
           fi
-          if [ "${{ inputs.buildEPUB }}" = "true" ]; then
+          if [ "${{ inputs.buildEPUB }}" == "true" ]; then
             echo "" >> src/book.toml
             echo "[output.epub]" >> src/book.toml
           fi
@@ -56,7 +56,7 @@ jobs:
       - run: mdbook build
       
       - run: |
-          if [ "${{ inputs.buildPDF }}" = "true" ] OR [ "${{ inputs.buildEPUB }}" = "true" ]; then
+          if [ "${{ inputs.buildPDF }}" == "true" ] OR [ "${{ inputs.buildEPUB }}" == "true" ]; then
             echo "BUILD_PATH=book/html" >> $GITHUB_ENV
           else
             echo "BUILD_PATH=book" >> $GITHUB_ENV
