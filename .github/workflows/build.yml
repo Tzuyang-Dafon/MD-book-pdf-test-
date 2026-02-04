@@ -12,7 +12,7 @@ on:
         description: '是否編譯成 PDF'
         type: boolean
         default: true
-      buildPDF:
+      buildEPUB:
         description: '是否編譯成 ePub'
         type: boolean
         default: false
